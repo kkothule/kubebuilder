@@ -1,0 +1,19 @@
+apiVersion: tzcronjobber.kkothule.io/v1
+kind: TZCronjobber
+metadata:
+  name: test-tz-cronjob-2c2l4-1111111
+  namespace: default
+spec:
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - args:
+            - /bin/sh
+            - -c
+            - echo "hello"
+            image: busybox
+            name: tzcronjob-test
+  schedule: 34 22 13 2 6
+  timezone: America/Los_Angeles
