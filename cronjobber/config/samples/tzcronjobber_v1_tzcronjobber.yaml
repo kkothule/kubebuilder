@@ -1,0 +1,21 @@
+apiVersion: tzcronjobber.kkothule.io/v1
+kind: TZCronjobber
+metadata:
+  name: tzcronjobber-sample1
+spec:
+  schedule: "00 6 14 * *"
+  timezone: "UTC"
+  startingDeadlineSeconds: 60
+  concurrencyPolicy: Allow # explicitly specify, but Allow is also default.
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: hello
+            image: busybox
+            args:
+            - /bin/sh
+            - -c
+            - date; echo Hello from the Kubernetes cluster
+          restartPolicy: OnFailure

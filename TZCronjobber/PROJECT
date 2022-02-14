@@ -1,0 +1,16 @@
+domain: tzcronjobs.cronjobber.kkothule.co
+layout:
+- go.kubebuilder.io/v3
+projectName: tzcronjobber
+repo: github.com/kkothule/kubebuilder/cronjobber
+resources:
+- api:
+    crdVersion: v1
+    namespaced: true
+  controller: true
+  domain: tzcronjobs.cronjobber.kkothule.co
+  group: cronjobber.kkothule.io
+  kind: TZCronJob
+  path: github.com/kkothule/kubebuilder/cronjobber/api/v1alpha1
+  version: v1alpha1
+version: "3"

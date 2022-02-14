@@ -1,0 +1,24 @@
+# permissions for end users to edit tzcronjobbers.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: tzcronjobber-editor-role
+rules:
+- apiGroups:
+  - tzcronjobber.kkothule.io
+  resources:
+  - tzcronjobbers
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - tzcronjobber.kkothule.io
+  resources:
+  - tzcronjobbers/status
+  verbs:
+  - get
